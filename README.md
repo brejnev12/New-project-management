@@ -45,7 +45,7 @@ php bin/console make:user
 php bin/console make:auth
 
 ### Lancer le serveur
-symfony server
+symfony serve
 
 
 
