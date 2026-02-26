@@ -1,5 +1,5 @@
 <?php
-
+//BrejnevNgondi
 namespace App\Entity;
 
 use App\Repository\ClientRepository;
@@ -82,7 +82,6 @@ class Client
     public function removeCustomerOrder(CustomerOrder $customerOrder): static
     {
         if ($this->customerOrders->removeElement($customerOrder)) {
-            // set the owning side to null (unless already changed)
             if ($customerOrder->getClient() === $this) {
                 $customerOrder->setClient(null);
             }

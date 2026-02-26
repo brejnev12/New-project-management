@@ -1,5 +1,5 @@
 <?php
-
+//BrejnevNgondi
 namespace App\Controller;
 
 use App\Entity\Product;
@@ -31,23 +31,20 @@ final class ProductController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Récupérer le fichier uploadé
             $imageFile = $form->get('imageFilename')->getData();
 
             if ($imageFile) {
                 $newFilename = uniqid().'.'.$imageFile->guessExtension();
 
-                // Déplacer le fichier dans le dossier uploads/
                 try {
                     $imageFile->move(
-                        $this->getParameter('uploads_directory'), // défini dans services.yaml
+                        $this->getParameter('uploads_directory'),
                         $newFilename
                     );
                 } catch (FileException $e) {
                     $this->addFlash('danger', 'Erreur lors de l\'upload de l\'image');
                 }
 
-                // Enregistrer le nom du fichier dans l'entité
                 $product->setImageFilename($newFilename);
             }
 
@@ -80,7 +77,6 @@ final class ProductController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            // Récupérer le fichier uploadé
             $imageFile = $form->get('imageFilename')->getData();
 
             if ($imageFile) {

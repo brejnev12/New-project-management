@@ -1,5 +1,5 @@
 <?php
-
+//BrejnevNgondi
 namespace App\Entity;
 
 use App\Repository\ProductRepository;
@@ -112,7 +112,6 @@ class Product
     public function removeCustomerOrder(CustomerOrder $customerOrder): static
     {
         if ($this->customerOrders->removeElement($customerOrder)) {
-            // set the owning side to null (unless already changed)
             if ($customerOrder->getProduct() === $this) {
                 $customerOrder->setProduct(null);
             }

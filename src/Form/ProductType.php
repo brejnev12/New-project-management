@@ -1,5 +1,5 @@
 <?php
-
+//BrejnevNgondi
 namespace App\Form;
 
 use App\Entity\Product;
@@ -19,8 +19,8 @@ class ProductType extends AbstractType
             ->add('price')
             ->add('imageFilename', FileType::class, [
                 'label' => 'Image du produit (PNG/JPG)',
-                'mapped' => false,           // IMPORTANT : on ne mappe pas directement sur l'entité
-                'required' => false,          // pas obligatoire
+                'mapped' => false,
+                'required' => false,
                 'constraints' => [
                     new File([
                         'maxSize' => '2M',
