@@ -40,10 +40,6 @@ php bin/console doctrine:database:create
 ### Créez la structure
 php bin/console doctrine:migrations:migrate
 
-### Authentification
-- php bin/console make:user
-- php bin/console make:auth
-
 ### Lancer le serveur
 symfony serve
 
