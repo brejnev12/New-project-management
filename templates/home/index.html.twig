@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard - Gestion{% endblock %}
+
+{% block body %}
+<div class="container py-5">
+    <h1 class="text-center mb-5">Product Management</h1>
+    <div class="row g-4">
+        <div class="col-12 col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="/images/client.jpg" class="card-img-top" alt="Gestion Clients">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-primary">Gestion des Clients</h5>
+                    <p class="card-text text-secondary">Créer, modifier ou supprimer des clients</p>
+                    <a href="{{ path('app_client_index') }}" class="btn btn-primary">Voir les clients</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="/images/produit.png" class="card-img-top" alt="Gestion Produits">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-success">Gestion des Produits</h5>
+                    <p class="card-text text-secondary">Créer, modifier ou supprimer des produits</p>
+                    <a href="{{ path('app_product_index') }}" class="btn btn-success">Voir les produits</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="/images/commande.jpg" class="card-img-top" alt="Gestion Commandes">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-warning">Gestion des Commandes</h5>
+                    <p class="card-text text-secondary">Créer, modifier ou supprimer des commandes</p>
+                    <a href="{{ path('app_customer_order_index') }}" class="btn btn-warning">Voir les commandes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

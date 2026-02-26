@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Produit | Product Management{% endblock %}
+
+{% block body %}
+<div class="container py-5">
+    <h2 class="text-center fw-bold mb-4">Product Management</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0">Modifier ce produit</h4>
+                </div>
+                <div class="card-body">
+                    {{ form_start(form, {'attr': {'enctype': 'multipart/form-data'}}) }}
+
+                    <div class="mb-3">
+                        {{ form_label(form.nameproduct, 'Nom du produit', {'label_attr': {'class': 'form-label'}}) }}
+                        {{ form_widget(form.nameproduct, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(form.nameproduct) }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form_label(form.description, 'Description', {'label_attr': {'class': 'form-label'}}) }}
+                        {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(form.description) }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form_label(form.price, 'Prix (€)', {'label_attr': {'class': 'form-label'}}) }}
+                        {{ form_widget(form.price, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(form.price) }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form_label(form.imageFilename, 'Image du produit', {'label_attr': {'class': 'form-label'}}) }}
+                        {{ form_widget(form.imageFilename, {'attr': {'class': 'form-control'}}) }}
+                        {{ form_errors(form.imageFilename) }}
+
+                        {# Afficher l'image existante si elle existe #}
+                        {% if product.imageFilename %}
+                            <div class="mt-2">
+                                <p class="small text-muted mb-1">Image actuelle :</p>
+                                <img src="{{ asset('uploads/' ~ product.imageFilename) }}"
+                                     alt="{{ product.nameproduct }}"
+                                     class="img-fluid rounded"
+                                     style="max-width: 150px; height: auto;">
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mt-4">
+                        <a href="{{ path('app_product_index') }}" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left-circle"></i>
+                            Retour à la liste
+                        </a>
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-save"></i>
+                            Enregistrer
+                        </button>
+                    </div>
+
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

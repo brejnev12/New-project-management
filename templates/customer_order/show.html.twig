@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détails commande | Product Management{% endblock %}
+
+{% block body %}
+<div class="container py-5">
+    <h2 class="text-center fw-bold mb-4">Détails de la commande</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0">Informations de la commande</h4>
+                </div>
+                <div class="card-body">
+                    <dl class="row mb-4">
+                        <dt class="col-sm-4 fw-bold text-end">Client :</dt>
+                        <dd class="col-sm-8">{{ customer_order.client ? customer_order.client.name : '—' }}</dd>
+
+                        <dt class="col-sm-4 fw-bold text-end">Produit :</dt>
+                        <dd class="col-sm-8">{{ customer_order.product ? customer_order.product.nameproduct : '—' }}</dd>
+
+                        <dt class="col-sm-4 fw-bold text-end">Date :</dt>
+                        <dd class="col-sm-8">
+                            {{ customer_order.createdAt ? customer_order.createdAt|date('d/m/Y H:i') : '—' }}
+                        </dd>
+                    </dl>
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ path('app_customer_order_index') }}" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left-circle"></i> Retour à la liste
+                        </a>
+                        <a href="{{ path('app_customer_order_edit', {id: customer_order.id}) }}" class="btn btn-warning text-white">
+                            <i class="bi bi-pencil-square"></i> Éditer
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

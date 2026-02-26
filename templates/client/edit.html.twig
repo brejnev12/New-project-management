@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+{% block title %}Modifier client | Product Management{% endblock %}
+{% block body %}
+<div class="container py-5">
+    <h2 class="text-center fw-bold mb-4">Product Management</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-warning text-white">
+                    <h4 class="mb-0">Modifier ce client</h4>
+                </div>
+                <div class="card-body">
+                    {{ form_start(form) }}
+                        <div class="mb-3">
+                            {{ form_label(form.name, 'Nom', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                            {{ form_errors(form.name) }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form_label(form.email, 'Email', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                            {{ form_errors(form.email) }}
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="{{ path('app_client_index') }}" class="btn btn-secondary">
+                                <i class="bi bi-arrow-left-circle"></i> Retour à la liste
+                            </a>
+                            <div>
+                                <button type="submit" class="btn btn-success">
+                                    <i class="bi bi-save"></i> Enregistrer
+                                </button>
+                            </div>
+                        </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

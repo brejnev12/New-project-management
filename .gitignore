@@ -8,6 +8,17 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+# XAMPP / DB
+*.sqlite
+*.db
+*.sql
+*.mysql
+*.dump
+*.sql.gz
+
+# IDE
+.idea/
+.vscode/
 
 ###> phpunit/phpunit ###
 /phpunit.xml
@@ -18,3 +29,10 @@
 /public/assets/
 /assets/vendor/
 ###< symfony/asset-mapper ###
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###

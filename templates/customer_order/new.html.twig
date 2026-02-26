@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% block title %}Nouvelle commande | Product Management{% endblock %}
+{% block body %}
+<div class="container py-5">
+    <h2 class="text-center fw-bold mb-4">Créer une nouvelle commande</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">Nouvelle commande</h4>
+                </div>
+                <div class="card-body">
+                    {{ form_start(form) }}
+                        <div class="mb-3">
+                            {{ form_label(form.client, 'Client', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.client, {'attr': {'class': 'form-select'}}) }}
+                            {{ form_errors(form.client) }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form_label(form.product, 'Produit', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.product, {'attr': {'class': 'form-select'}}) }}
+                            {{ form_errors(form.product) }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form_label(form.createdAt, 'Date de commande', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.createdAt, {'attr': {'class': 'form-control'}}) }}
+                            {{ form_errors(form.createdAt) }}
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-4">
+                            <a href="{{ path('app_customer_order_index') }}" class="btn btn-secondary">
+                                <i class="bi bi-arrow-left-circle"></i> Retour à la liste
+                            </a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-cart-check"></i> Créer la commande
+                            </button>
+                        </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
