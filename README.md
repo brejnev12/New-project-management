@@ -19,7 +19,7 @@ Ce projet inclut :
 ### Clonez le dépôt
 
 - git clone https://github.com/brejnev12/New-project-management.git
-- cd New-projet-management
+- cd New-project-management
 
 ### Installez les dépendances
 - composer install
